@@ -66,13 +66,15 @@ Através do cadastro, o Candidato ( denominado “candidate” ) cadastra seu cu
 
 <br>
 
+---
+
 ### Empresas
 
 | Verbo  | Recurso                   | Descrição                                |
-| ------ | ------------------------- | ---------------------------------------- | --- |
+| ------ | ------------------------- | ---------------------------------------- | 
 | GET    | `/companies`              | Retornar todas as empresas               |
-| GET    | `/companies/jobs`         | Retornar todas as vagas de empregos      |     |
-| GET    | `/companies/:id/jobs`     | Retornar uma vaga de emprego específica  |     |
+| GET    | `/companies/jobs`         | Retornar todas as vagas de empregos      |
+| GET    | `/companies/:id/jobs`     | Retornar uma vaga de emprego específica  |
 | GET    | `/companies/:id`          | Retornar apenas uma empresa específica   |
 | POST   | `/companies`              | Cadastrar uma nova empresa               |
 | POST   | `/companies/:id/jobs`     | Cadastrar uma nova vaga de emprego       |
