@@ -1,0 +1,29 @@
+{
+  "name": "projeto-livre",
+  "version": "1.0.0",
+  "description": "Projeto final do bootcamp da Reprograma - On7 Backend - 2020.",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon ./bin/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diaslilian/projeto-livre.git"
+  },
+  "author": "Lilian Dias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diaslilian/projeto-livre/issues"
+  },
+  "homepage": "https://github.com/diaslilian/projeto-livre#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv-safe": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.17"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
