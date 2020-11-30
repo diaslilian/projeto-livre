@@ -71,7 +71,7 @@ Através do cadastro, o Candidato ( denominado “candidate” ) cadastra seu cu
 ### Empresas
 
 | Verbo  | Recurso                   | Descrição                                |
-| ------ | ------------------------- | ---------------------------------------- | 
+| ------ | ------------------------- | ---------------------------------------- |
 | GET    | `/companies`              | Retornar todas as empresas               |
 | GET    | `/companies/jobs`         | Retornar todas as vagas de empregos      |
 | GET    | `/companies/:id/jobs`     | Retornar uma vaga de emprego específica  |
@@ -101,6 +101,25 @@ Através do cadastro, o Candidato ( denominado “candidate” ) cadastra seu cu
 ---
 
 ---
+
+<br><br>
+
+Requisitos obrigatórios:
+
+- [x] Implementação da criação das entidades
+- [x] Implementação da leitura das entidades
+- [x] Implementação da atualização das entidades
+- [x] Implementação de deletar as entidades
+- [x] Integrar com o banco de dados MongoDB
+- [x] Deploy no Heroku
+
+Requisitos desejáveis:
+
+- [x] Adicionar variável de ambiente com Dotenv
+- [ ] Autenticação das entidades com JWT
+- [ ] Criptografar senha das entidades com Bcrypt
+- [ ] Criar rota de login
+- [ ] Relacionamento entre as entidades
 
 <br>
 
@@ -151,6 +170,38 @@ $ npm install
 $ npm start
 
 ```
+
+<br><br>
+
+### :memo: Contribuindo com o projeto
+
+1. Faça o fork do projeto
+
+`https://github.com/diaslilian/projeto-livre/fork`
+
+2. Faça o checkout na branch main
+
+`git checkout main`
+
+3. Crie uma branch para realizar suas modificações
+
+`git checkout -b feature/nome-da-sua-branch`
+
+4. Após realizar as modificações, use o comando
+
+`git add .`
+
+5. Faça o commit
+
+`git commit -m 'mensagem aqui'`
+
+6. Faça o push
+
+`git push --set-upstream origin feature/nome-da-sua-branch`
+
+7. Crie um novo Pull Request para a branch
+
+`feature/staging`
 
 <br><br>
 
