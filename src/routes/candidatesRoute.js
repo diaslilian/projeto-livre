@@ -6,5 +6,6 @@ const controller = require("../controllers/candidatesController");
 router.post("/", controller.createCandidate);
 
 router.get("/", controller.getAllCandidates);
+router.get("/:id", controller.getById);
 
 module.exports = router;
