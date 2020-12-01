@@ -28,7 +28,18 @@ const getAllCandidates = (req, res) => {
   });
 };
 
+const getById = (req, res) => {
+  const id = req.params.id;
+
+  candidates.find({ id }, (err, candidate) => {
+    err
+      ? res.status(424).send({ message: err.message })
+      : res.status(200).send(candidate);
+  });
+};
+
 module.exports = {
   createCandidate,
   getAllCandidates,
+  getById,
 };
