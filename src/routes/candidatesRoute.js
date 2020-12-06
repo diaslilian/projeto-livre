@@ -10,4 +10,6 @@ router.get("/:id", controller.getById);
 
 router.put("/:id", controller.putCandidate);
 
+router.delete("/:id", controller.deleteCandidate);
+
 module.exports = router;

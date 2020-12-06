@@ -51,8 +51,30 @@ const putCandidate = (req, res) => {
           : res.status(200).send({ message: "Record successfully changed" })
       );
     } else {
-      res.status(200).send({
+      return res.status(200).send({
         message: "No records to be updated with this id",
+      });
+    }
+  });
+};
+
+const deleteCandidate = (req, res) => {
+  const id = req.params.id;
+
+  candidates.find({ id }, (err, candidate) => {
+    if (candidate.length > 0) {
+      candidates.deleteOne({ id }, (err) =>
+        err
+          ? res.status(424).send({ message: err.message })
+          : res.status(200).send({
+              status: "Success",
+              message: "Candidate successfully removed",
+            })
+      );
+    } else {
+      return res.status(200).send({
+        message: "No candidate to be removed",
+        status: "Empty",
       });
     }
   });
@@ -63,4 +85,5 @@ module.exports = {
   getAllCandidates,
   getById,
   putCandidate,
+  deleteCandidate,
 };
