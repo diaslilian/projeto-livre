@@ -24,7 +24,9 @@ const getAllCandidates = (req, res) => {
   console.log(req.url);
 
   candidates.find((err, candidate) => {
-    return res.status(200).send(candidate);
+    err
+      ? res.status(424).send({ message: err.message })
+      : res.status(200).send(candidate);
   });
 };
 
@@ -38,8 +40,27 @@ const getById = (req, res) => {
   });
 };
 
+const putCandidate = (req, res) => {
+  const id = req.params.id;
+
+  candidates.find({ id }, (err, candidate) => {
+    if (candidate.length > 0) {
+      candidates.updateMany({ id }, { $set: req.body }, (err) =>
+        err
+          ? res.status(424).send({ message: err.message })
+          : res.status(200).send({ message: "Record successfully changed" })
+      );
+    } else {
+      res.status(200).send({
+        message: "No records to be updated with this id",
+      });
+    }
+  });
+};
+
 module.exports = {
   createCandidate,
   getAllCandidates,
   getById,
+  putCandidate,
 };
