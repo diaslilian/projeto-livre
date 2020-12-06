@@ -31,12 +31,12 @@ const getAllCandidates = (req, res) => {
 };
 
 const getJobsCandidate = (req, res) => {
-  const jobsTitle = req.query;
+  const jobs = req.query.jobs;
 
-  candidates.find(jobsTitle, (err, jobs) => {
+  candidates.find(jobs, (err, job) => {
     err
       ? res.status(424).send({ message: err.message })
-      : res.status(200).send(jobs);
+      : res.status(200).send(job);
   });
 };
 

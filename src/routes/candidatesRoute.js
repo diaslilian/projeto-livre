@@ -6,7 +6,7 @@ const controller = require("../controllers/candidatesController");
 router.post("/", controller.createCandidate);
 
 router.get("/", controller.getAllCandidates);
-router.get("/jobsTitle", controller.getJobsCandidate);
+router.get("/jobs", controller.getJobsCandidate);
 router.get("/:id", controller.getById);
 
 router.put("/:id", controller.putCandidate);
