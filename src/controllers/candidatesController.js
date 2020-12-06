@@ -30,6 +30,16 @@ const getAllCandidates = (req, res) => {
   });
 };
 
+const getJobsCandidate = (req, res) => {
+  const jobsTitle = req.query;
+
+  candidates.find(jobsTitle, (err, jobs) => {
+    err
+      ? res.status(424).send({ message: err.message })
+      : res.status(200).send(jobs);
+  });
+};
+
 const getById = (req, res) => {
   const id = req.params.id;
 
@@ -83,6 +93,7 @@ const deleteCandidate = (req, res) => {
 module.exports = {
   createCandidate,
   getAllCandidates,
+  getJobsCandidate,
   getById,
   putCandidate,
   deleteCandidate,
