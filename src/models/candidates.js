@@ -12,7 +12,7 @@ const candidatesSchema = new mongoose.Schema(
     educationalLevel: { type: String },
     language: { type: Boolean },
     whatLanguages: [[String]],
-    jobsTitle: { type: String },
+    jobs: { type: String },
   },
   {
     versionKey: false,
