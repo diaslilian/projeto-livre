@@ -30,13 +30,11 @@ const getAllCandidates = (req, res) => {
   });
 };
 
-const getJobsCandidate = (req, res) => {
-  const jobs = req.query.jobs;
-
-  candidates.find(jobs, (err, job) => {
+const getCandidateByLanguage = (req, res) => {
+  candidates.find({ language: true }, (err, lan) => {
     err
       ? res.status(424).send({ message: err.message })
-      : res.status(200).send(job);
+      : res.status(200).send(lan);
   });
 };
 
@@ -93,7 +91,7 @@ const deleteCandidate = (req, res) => {
 module.exports = {
   createCandidate,
   getAllCandidates,
-  getJobsCandidate,
+  getCandidateByLanguage,
   getById,
   putCandidate,
   deleteCandidate,
