@@ -7,4 +7,8 @@ router.post("/", controller.createCompany);
 
 router.get("/", controller.getAllCompanies);
 
+router.put("/:id", controller.putCompany);
+
+router.delete("/:id", controller.deleteCompany);
+
 module.exports = router;
