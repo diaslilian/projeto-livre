@@ -41,8 +41,22 @@ const putCompany = (req, res) => {
   });
 };
 
+const deleteCompany = (req, res) => {
+  const id = req.params.id;
+
+  companies.deleteMany({ id }, (err) => {
+    err
+      ? res.status(424).send({ message: err.message })
+      : res.status(200).send({
+          status: "Success",
+          message: "Company successfully removed",
+        });
+  });
+};
+
 module.exports = {
   createCompany,
   getAllCompanies,
   putCompany,
+  deleteCompany,
 };
