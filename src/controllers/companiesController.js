@@ -23,6 +23,16 @@ const getAllCompanies = (req, res) => {
   });
 };
 
+const getCompanyById = (req, res) => {
+  const id = req.params.id;
+
+  companies.find({ id }, (err, company) => {
+    err
+      ? res.status(424).send({ message: err.message })
+      : res.status(200).send(company);
+  });
+};
+
 const putCompany = (req, res) => {
   const id = req.params.id;
 
@@ -57,6 +67,7 @@ const deleteCompany = (req, res) => {
 module.exports = {
   createCompany,
   getAllCompanies,
+  getCompanyById,
   putCompany,
   deleteCompany,
 };
