@@ -23,7 +23,26 @@ const getAllCompanies = (req, res) => {
   });
 };
 
+const putCompany = (req, res) => {
+  const id = req.params.id;
+
+  companies.find({ id }, (err, company) => {
+    if (company.length > 0) {
+      companies.updateMany({ id }, { $set: req.body }, (err) =>
+        err
+          ? res.status(424).send({ message: err.message })
+          : res.status(200).send({ message: "Record successfully changed" })
+      );
+    } else {
+      res.status(200).send({
+        message: "No records to be updated with this id",
+      });
+    }
+  });
+};
+
 module.exports = {
   createCompany,
   getAllCompanies,
+  putCompany,
 };
