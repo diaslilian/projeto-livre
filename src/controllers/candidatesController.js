@@ -21,8 +21,6 @@ const createCandidate = (req, res) => {
 };
 
 const getAllCandidates = (req, res) => {
-  console.log(req.url);
-
   candidates.find((err, candidate) => {
     err
       ? res.status(424).send({ message: err.message })
