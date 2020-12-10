@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
 
-const controller = require("../controllers/candidatesController");
+const candidateController = require("../controllers/candidatesController");
 
-router.post("/", controller.createCandidate);
+router.post("/", candidateController.createCandidate);
 
-router.get("/", controller.getAllCandidates);
-router.get("/language", controller.getCandidateByLanguage);
-router.get("/:id", controller.getById);
+router.get("/", candidateController.getAllCandidates);
+router.get("/language", candidateController.getCandidateByLanguage);
+router.get("/:id", candidateController.getById);
 
-router.put("/:id", controller.putCandidate);
+router.put("/:id", candidateController.putCandidate);
 
-router.delete("/:id", controller.deleteCandidate);
+router.delete("/:id", candidateController.deleteCandidate);
 
 module.exports = router;
