@@ -8,7 +8,8 @@ const app = express();
 
 mongoose.connect(`${process.env.MONGODB_URL}`, {
   useNewUrlParser: true,
-  useFindAndModify: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
   useUnifiedTopology: true,
 });
 
