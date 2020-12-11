@@ -8,6 +8,8 @@ router.post("/", companyController.createCompany);
 
 router.post("/:id/jobs", jobController.createJob);
 
+router.get("/:id/jobs", jobController.getJobs);
+
 router.get("/", companyController.getAllCompanies);
 router.get("/:id", companyController.getCompanyById);
 
