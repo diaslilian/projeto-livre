@@ -23,16 +23,17 @@ const createJob = async (req, res) => {
 
 const getJobs = async (req, res) => {
   const companyId = req.params.id;
-  await jobs.jobsModel.findById(companyId, (error, company) => {
+
+  return jobs.jobsModel.findById(companyId, (error, company) => {
     if (error) {
       return res.status(500).send(error);
     }
 
     if (company) {
-      return res.status(200).send(company.jobs);
+      return res.status(200).send(company.job);
     }
 
-    return res.status(404).send("Company not found.");
+    return res.status(404).send("Job not found.");
   });
 };
 
