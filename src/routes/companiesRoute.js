@@ -5,12 +5,12 @@ const companyController = require("../controllers/companiesController");
 const jobController = require("../controllers/jobsController");
 
 router.post("/", companyController.createCompany);
+router.post("/:companyId/jobs", jobController.createJob);
 
-router.post("/:id/jobs", jobController.createJob);
-
-router.get("/:companyId/jobs/:jobId", jobController.getJobById);
 router.get("/", companyController.getAllCompanies);
 router.get("/:id", companyController.getCompanyById);
+router.get("/:id/jobs", jobController.getAllJobs);
+router.get("/:companyId/jobs/:jobId", jobController.getJobById);
 
 router.put("/:id", companyController.putCompany);
 router.put("/:companyId/jobs/:jobId", jobController.putJob);
