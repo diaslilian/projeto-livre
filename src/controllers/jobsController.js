@@ -31,7 +31,38 @@ const getJobById = async (req, res) => {
   return res.status(200).send(job);
 };
 
+const putJob = async (req, res) => {
+  const companyId = req.params.companyId;
+  const jobId = req.params.jobId;
+  const options = { new: true };
+
+  await companies.companiesModel.findOneAndUpdate(
+    { _id: companyId, "jobs._id": jobId },
+    {
+      $set: {
+        "jobs.$.title": req.body.title,
+        "jobs.$.description": req.body.description,
+        "jobs.$.remote": req.body.remote,
+        "jobs.$.requirements": req.body.requirements,
+      },
+    },
+    options,
+    (err, company) => {
+      if (err) {
+        return res.status(500).send(err);
+      }
+
+      if (company) {
+        return res.status(200).send(company);
+      }
+
+      return res.status(404).send("Company not found!");
+    }
+  );
+};
+
 module.exports = {
   createJob,
   getJobById,
+  putJob,
 };

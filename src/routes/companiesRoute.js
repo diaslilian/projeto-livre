@@ -10,6 +10,8 @@ router.post("/:id/jobs", jobController.createJob);
 
 router.get("/:companyId/jobs/:jobId", jobController.getJobById);
 
+router.put("/:companyId/jobs/:jobId", jobController.putJob);
+
 router.get("/", companyController.getAllCompanies);
 router.get("/:id", companyController.getCompanyById);
 
