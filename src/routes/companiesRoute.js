@@ -1,15 +1,18 @@
 const express = require("express");
 const router = express.Router();
 
-const controller = require("../controllers/companiesController");
+const companyController = require("../controllers/companiesController");
+const jobController = require("../controllers/jobsController");
 
-router.post("/", controller.createCompany);
+router.post("/", companyController.createCompany);
 
-router.get("/", controller.getAllCompanies);
-router.get("/:id", controller.getCompanyById);
+router.post("/:id/jobs", jobController.createJob);
 
-router.put("/:id", controller.putCompany);
+router.get("/", companyController.getAllCompanies);
+router.get("/:id", companyController.getCompanyById);
 
-router.delete("/:id", controller.deleteCompany);
+router.put("/:id", companyController.putCompany);
+
+router.delete("/:id", companyController.deleteCompany);
 
 module.exports = router;
