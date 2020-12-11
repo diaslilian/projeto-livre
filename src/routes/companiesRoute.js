@@ -9,13 +9,11 @@ router.post("/", companyController.createCompany);
 router.post("/:id/jobs", jobController.createJob);
 
 router.get("/:companyId/jobs/:jobId", jobController.getJobById);
-
-router.put("/:companyId/jobs/:jobId", jobController.putJob);
-
 router.get("/", companyController.getAllCompanies);
 router.get("/:id", companyController.getCompanyById);
 
 router.put("/:id", companyController.putCompany);
+router.put("/:companyId/jobs/:jobId", jobController.putJob);
 
 router.delete("/:id", companyController.deleteCompany);
 
