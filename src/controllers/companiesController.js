@@ -14,8 +14,6 @@ const createCompany = (req, res) => {
 };
 
 const getAllCompanies = (req, res) => {
-  console.log(req.url);
-
   companies.find((err, companie) => {
     err
       ? res.status(424).send({ message: err.message })
