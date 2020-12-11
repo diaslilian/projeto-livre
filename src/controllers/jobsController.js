@@ -2,23 +2,36 @@ const companies = require("../models/companies");
 const jobs = require("../models/jobs");
 
 const createJob = async (req, res) => {
+  const companyId = req.params.companyId;
+  const job = req.body;
+
+  const newJob = new jobs.jobsModel(job);
+  const company = await companies.companiesModel.findById(companyId);
+
+  company.jobs.push(newJob);
+  company.save((err) => {
+    if (err) {
+      return res.status(500).send(err);
+    }
+
+    return res.status(201).send(company);
+  });
+};
+
+const getAllJobs = async (req, res) => {
   const companyId = req.params.id;
 
-  const companyFound = await companies.findOne({ id: companyId });
+  await companies.companiesModel.findById(companyId, (err, company) => {
+    if (err) {
+      return res.status(500).send(err);
+    }
 
-  if (companyFound) {
-    const job = new jobs.jobsModel(req.body);
+    if (company) {
+      return res.status(200).send(company.jobs);
+    }
 
-    companyFound.jobs.push(job);
-    companyFound.save((err) => {
-      if (err) {
-        res.status(424).send("Job not included.");
-      }
-      res.status(201).send(companyFound);
-    });
-  } else {
-    return res.status(404).send("Company not found!");
-  }
+    return res.status(404).send("Company not found.");
+  });
 };
 
 const getJobById = async (req, res) => {
@@ -63,6 +76,7 @@ const putJob = async (req, res) => {
 
 module.exports = {
   createJob,
+  getAllJobs,
   getJobById,
   putJob,
 };
