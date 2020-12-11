@@ -1,7 +1,7 @@
 const companies = require("../models/companies");
 
 const createCompany = (req, res) => {
-  const company = new companies(req.body);
+  const company = new companies.companiesModel(req.body);
 
   company.save((err) => {
     err
@@ -14,7 +14,7 @@ const createCompany = (req, res) => {
 };
 
 const getAllCompanies = (req, res) => {
-  companies.find((err, companie) => {
+  companies.companiesModel.find((err, companie) => {
     err
       ? res.status(424).send({ message: err.message })
       : res.status(200).send(companie);
@@ -24,7 +24,7 @@ const getAllCompanies = (req, res) => {
 const getCompanyById = (req, res) => {
   const id = req.params.id;
 
-  companies.find({ id }, (err, company) => {
+  companies.companiesModel.find({ id }, (err, company) => {
     err
       ? res.status(424).send({ message: err.message })
       : res.status(200).send(company);
@@ -34,9 +34,9 @@ const getCompanyById = (req, res) => {
 const putCompany = (req, res) => {
   const id = req.params.id;
 
-  companies.find({ id }, (err, company) => {
+  companies.companiesModel.find({ id }, (err, company) => {
     if (company.length > 0) {
-      companies.updateMany({ id }, { $set: req.body }, (err) =>
+      companies.companiesModel.updateMany({ id }, { $set: req.body }, (err) =>
         err
           ? res.status(424).send({ message: err.message })
           : res.status(200).send({ message: "Record successfully changed" })
@@ -52,7 +52,7 @@ const putCompany = (req, res) => {
 const deleteCompany = (req, res) => {
   const id = req.params.id;
 
-  companies.deleteMany({ id }, (err) => {
+  companies.companiesModel.deleteMany({ id }, (err) => {
     err
       ? res.status(424).send({ message: err.message })
       : res.status(200).send({
