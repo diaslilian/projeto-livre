@@ -39,4 +39,4 @@ const companiesSchema = new mongoose.Schema(
 
 const companiesModel = mongoose.model("Companies", companiesSchema);
 
-module.exports = companiesModel;
+module.exports = { companiesModel, companiesSchema };

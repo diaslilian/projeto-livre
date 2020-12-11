@@ -21,23 +21,17 @@ const createJob = async (req, res) => {
   }
 };
 
-const getJobs = async (req, res) => {
-  const companyId = req.params.id;
+const getJobById = async (req, res) => {
+  const companyId = req.params.companyId;
+  const jobId = req.params.jobId;
 
-  return jobs.jobsModel.findById(companyId, (error, company) => {
-    if (error) {
-      return res.status(500).send(error);
-    }
+  const company = await companies.companiesModel.findById(companyId);
+  const job = company.jobs.find((job) => job._id == jobId);
 
-    if (company) {
-      return res.status(200).send(company.job);
-    }
-
-    return res.status(404).send("Job not found.");
-  });
+  return res.status(200).send(job);
 };
 
 module.exports = {
   createJob,
-  getJobs,
+  getJobById,
 };
