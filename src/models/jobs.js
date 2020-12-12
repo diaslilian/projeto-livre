@@ -2,9 +2,6 @@ const mongoose = require("mongoose");
 
 const jobsSchema = new mongoose.Schema(
   {
-    id: {
-      type: Number,
-    },
     title: {
       type: String,
       required: true,

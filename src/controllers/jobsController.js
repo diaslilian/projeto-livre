@@ -74,9 +74,29 @@ const putJob = async (req, res) => {
   );
 };
 
+const deleteJob = (req, res) => {
+  const jobId = req.params.jobId;
+  const companyId = req.params.companyId;
+
+  jobs.jobsModel.deleteMany({ _id: companyId }, (err) => {
+    if (err) return res.status(424).send("Job was not removed.");
+
+    companies.companiesModel.updateMany(
+      {},
+      { $pull: { jobs: { _id: jobId } } },
+      (err) => {
+        err
+          ? res.status(424).send({ message: err.message })
+          : res.status(200).send({ message: "Job successfully removed" });
+      }
+    );
+  });
+};
+
 module.exports = {
   createJob,
   getAllJobs,
   getJobById,
   putJob,
+  deleteJob,
 };
