@@ -1,8 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const authMiddleware = require("../middlewares/auth");
 
 const companyController = require("../controllers/companiesController");
 const jobController = require("../controllers/jobsController");
+
+router.use(authMiddleware);
 
 router.post("/", companyController.createCompany);
 router.post("/:companyId/jobs", jobController.createJob);

@@ -23,6 +23,7 @@ db.once("open", () => {
 const index = require("./routes/index");
 const candidates = require("./routes/candidatesRoute");
 const companies = require("./routes/companiesRoute");
+const admin = require("./routes/adminRoute");
 
 app.use(bodyParser.json());
 
@@ -38,5 +39,6 @@ app.use(function (req, res, next) {
 app.use("/", index);
 app.use("/candidates", candidates);
 app.use("/companies", companies);
+app.use("/admin", admin);
 
 module.exports = app;

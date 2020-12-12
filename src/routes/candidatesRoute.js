@@ -1,7 +1,10 @@
 const express = require("express");
 const router = express.Router();
+const authMiddleware = require("../middlewares/auth");
 
 const candidateController = require("../controllers/candidatesController");
+
+router.use(authMiddleware);
 
 router.post("/", candidateController.createCandidate);
 
