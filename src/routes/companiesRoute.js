@@ -16,5 +16,6 @@ router.put("/:id", companyController.putCompany);
 router.put("/:companyId/jobs/:jobId", jobController.putJob);
 
 router.delete("/:id", companyController.deleteCompany);
+router.delete("/:companyId/jobs/:jobId", jobController.deleteJob);
 
 module.exports = router;
