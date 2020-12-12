@@ -132,9 +132,9 @@ Requisitos obrigatórios:
 Requisitos desejáveis:
 
 - [x] Adicionar variável de ambiente com Dotenv
-- [ ] Autenticação das entidades com JWT
-- [ ] Criptografar senha das entidades com Bcrypt
-- [ ] Criar rota de login
+- [x] Autenticação das entidades com JWT
+- [x] Criptografar senha das entidades com Bcrypt
+- [x] Criar rota de login
 - [x] Relacionamento entre as entidades
 
 <br>
