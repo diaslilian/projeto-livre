@@ -17,7 +17,7 @@
 <hr>
 
 <p align="center">
-  <a href="#memo-sobre">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#beginner-resumo">Resumo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#books-banco-de-dados">Banco de dados</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#pushpin-como-usar">Como usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -28,9 +28,7 @@
 <br>
 <br>
 
-## :memo: Sobre
-
-    RESUMO
+## :beginner: Resumo
 
 Segundo o IBGE, pretos e pardos correspondem a 64% dos desempregados e 66% dos subutilizados, mostra o estudo “Desigualdades Sociais por Cor ou Raça”.
 Essa população recebe menos que as pessoas brancas independente do nível de instrução.
