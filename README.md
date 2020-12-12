@@ -3,8 +3,8 @@
 </h1>
     <br>
 
-<h1 align="center"> PROJETO LIVRE - CONCLUSÃO DO CURSO
-</h1>
+<h2 align="center"> PROJETO LIVRE - CONCLUSÃO DO CURSO
+</h2>
 
 <h2 align="center">
     <img src="https://user-images.githubusercontent.com/47895394/100524732-48702b00-3199-11eb-9e1e-fc5d446b9952.png" width="20%" ></img>
@@ -13,6 +13,22 @@
 <h3 align="center">Atender a população negra no âmbito profissional, contribuindo para o aumento do número de negros no mercado de trabalho, principalmente em cargos estratégicos e de liderança.</h3>
 
 <br>
+<br>
+<hr>
+
+<p align="center">
+  <a href="#memo-sobre">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#books-banco-de-dados">Banco de dados</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#pushpin-como-usar">Como usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-contribuindo-com-o-projeto">Contribuindo com o projeto</a>
+</p>
+
+<br>
+<br>
+<br>
+
+## :memo: Sobre
 
     RESUMO
 
@@ -42,9 +58,11 @@ FONTES:
 
 <br>
 
-    O BANCO DE DADOS
+## :books: Banco de dados
 
-Através do cadastro, o Candidato ( denominado “candidate” ) cadastra seu currículo, que ficará disponível para as Empresas ( denominado “companie” ) cadastradas, que querem contratar os candidatos. As empresas cadastram as vagas disponíveis, assim ficará visível para todos os candidatos.
+Através do cadastro, o Candidato ( denominado “candidate” ) cadastra seu currículo, que ficará disponível para as Empresas ( denominado “companie” ) cadastradas, que querem contratar os candidatos. As empresas cadastram as vagas disponíveis, assim ficará visível para todos os candidatos que busquem por vagas.
+
+<br>
 
 ---
 
@@ -119,7 +137,7 @@ Requisitos desejáveis:
 - [ ] Autenticação das entidades com JWT
 - [ ] Criptografar senha das entidades com Bcrypt
 - [ ] Criar rota de login
-- [ ] Relacionamento entre as entidades
+- [x] Relacionamento entre as entidades
 
 <br>
 
@@ -135,8 +153,9 @@ Requisitos desejáveis:
 - [Heroku](https://www.heroku.com/)
 
 <br>
+<br>
 
-## :information_source: COMO USAR:
+## :pushpin: Como usar
 
 ### :eyes: **Acessar rotas**
 
@@ -173,7 +192,7 @@ $ npm start
 
 <br><br>
 
-### :memo: Contribuindo com o projeto
+## :memo: Contribuindo com o projeto
 
 1. Faça o fork do projeto
 
